@@ -91,6 +91,42 @@ good educated guess about where to cut the stream parts.
 In order to handle binary data on stdio reliably, I'll use python3.
 
 
+### Markers
+
+#### TXXX…segmentmetadata
+
+`TXXX.{4,32}\x03segmentmetadata\x00\{?[ -z]{0,512}\}?`
+
+… seems to be rather reliable. The `segmentmetadata\x00` part is usually
+followed by the initial part of a JSON representation of an object with
+a property `"ingest_r":` whose value will be `0` for system messages and
+a positive number for content segments.
+
+
+#### ID3
+
+`\xFFID3 \xFFID3 \x00`
+
+This is often encountered shortly (less than 512 bytes) before the
+TXXX marker described above. Between the ID3 marker and the TXXX marker,
+we'll usually encounter fields like:
+
+* `TRCK`: (unknown)
+* `TDEN`: A timestamp in format `%FT%T` (2024-08-10T10:45:00).
+  This is probably when the streamer sent the packet,
+  or when it was handled by Twitch servers.
+  "TDEN" might be an abbreviation for "Time and Date of ENcoding".
+* `TDTG`: Usually the same as `TDEN`.
+* `TOFN`: A filename in the form `index-0000000000.ts`.
+  "OFN" might be an abbreviation for "original file name".
+* `TSSE`: 38 lowercase hexadecimal digits.
+  Probably a checksum or signature.
+* The `TSSE` is usually (always?) immediately followed by `G\x01\x02`.
+  Since `G` is the "sync byte" of the [MPEG TS fromat][wp-mpeg-ts],
+  this `G` may actually be the proper start of the next segment.
+
+
+
 
 
 
