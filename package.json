@@ -1,0 +1,27 @@
+{ "name": "twitch-segment-cutting-board",
+  "version": "0.0.1",
+  "description": "Split/ select/ merge/ write individual MPEG-TS (transport stream) segments in ways that help old VLC cope with Twitch.",
+  "keywords": [
+    "mpeg-ts",
+    "streamlink",
+    "twitch",
+    "vlc"
+  ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/twitch-segment-cutting-board-py/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/twitch-segment-cutting-board-py.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/twitch-segment-cutting-board-py/issues"
+  },
+  "contributors": [],
+
+  "private": true, "license": "ISC",
+
+
+
+  "engines": { "bash": ">=4.0.0", "python": ">=3.8.10" }
+}
