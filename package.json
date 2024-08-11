@@ -3,8 +3,10 @@
   "description": "Split/ select/ merge/ write individual MPEG-TS (transport stream) segments in ways that help old VLC cope with Twitch.",
   "keywords": [
     "mpeg-ts",
+    "segmentmetadata",
     "streamlink",
     "twitch",
+    "txxx",
     "vlc"
   ],
 
