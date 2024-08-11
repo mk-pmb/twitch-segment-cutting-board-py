@@ -79,6 +79,32 @@ However, there are some aspects that we should be able to improve:
   for the parts that you're done watching.
 
 
+#### Improved automation and integration
+
+A program between streamlink and a player can observe the stream,
+understand stream state (e.g. position and type of content),
+and can communicate that information to other programs.
+In the most basic form, this means exposing the information in ways
+that other programs can easily observe.
+
+Other programs could then react to (changes in) that information:
+
+* Make your player switch to a lower priority stream when a content disruption
+  (e.g. network outage or system message) occurrs, and switch back once the
+  higher priority stream recovers.
+* Adjust your playback speed so that after pause-and-resume, your catch-up
+  with the live stream will be smooth, and will occurr right after the
+  upcoming break instead of just before.
+* In streams with a fixed-length intro video, use stream timestamps to switch
+  your player to the new stream only when the intro is almost over.
+
+In more advanced scenarios, we may also help other programs enhance the stream
+being received, like interrupting the stream for inserting a warning message
+about the recording disk becoming low on free space (without having that
+warning be recorded) or on strong hardware maybe even rendering custom overlays
+into the stream.
+
+
 
 Strategy
 --------
