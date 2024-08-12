@@ -26,6 +26,9 @@ The system messages are sent with timestamps on their own timeline,
 which doesn't fit the timeline of the timestamps of the actual content
 segments sent by the streamer.
 This confuses some players like Ubuntu's (slightly old) version of VLC.
+(In VLC 3.0.9.2, not only does it mess with the position/seek bar, but also
+sometimes when it encounters the border between two timelines, it sets its
+volume and mutedness to whatever another running VLC instance currently has.)
 
 
 #### Initial behind-the-scenes stories
