@@ -181,7 +181,10 @@ Known issues
 
   [sl-official]: https://github.com/streamlink/streamlink
   [sl-ubunative]: https://github.com/mk-pmb/streamlink-ubuntu-native
-  [wp-mpeg-ts]: https://en.wikipedia.org/wiki/MPEG_transport_stream
+  [wp-mpeg-ts]: https://en.wikipedia.org/wiki/MPEG_transport_stream?oldid=1307033632&date=20250821.0400
+  [wp-mpeg-ts-pid]: https://en.wikipedia.org/wiki/MPEG_TS?oldid=1307033632&date=20250821.0400#Packet_identifier_(PID)
+  [wp-mpeg-ts-psi]: https://en.wikipedia.org/wiki/MPEG_TS_PSI?oldid=1298753400&date=20250704.1301
+  [wp-mpeg-ts-pes]: https://en.wikipedia.org/wiki/MPEG_TS_PES?oldid=1305271693&date=20250811.0238
 
 
 &nbsp;
