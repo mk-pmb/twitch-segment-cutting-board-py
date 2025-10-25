@@ -11,11 +11,13 @@ def asciidump(buf):
 
 
 def summarize_decoded_mpegts_packet(orig_packet, payload_preview=60):
-    keep = { **orig_packet }
-    data = keep['pl_bytes']
-    preview = ((payload_preview > 0) and
-        data and asciidump(data[0:payload_preview]))
+    meta = { **orig_packet }
+    data = (payload_preview > 0) and meta['pl_bytes']
+    if data:
+        asciidump(data[0:payload_preview]))
     for key, val in _facts.BORING_FIELD_VALUES.items():
-        if keep.get(key) == val:
-            del keep[key]
-    return preview, keep
+        if meta.get(key) == val:
+            del meta[key]
+    del meta['af_bytes']
+    del meta['pl_bytes']
+    return meta, data

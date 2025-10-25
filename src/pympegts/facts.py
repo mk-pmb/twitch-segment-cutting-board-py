@@ -6,7 +6,6 @@ SYNC_BYTE_CHAR = b'G'
 SYNC_BYTE_CODEPOINT = SYNC_BYTE_CHAR[0]
 
 BORING_FIELD_VALUES = {
-    'pk_len': PACKET_LENGTH,
     'tei': False,
     'pusi': False,
     'prio': False,
